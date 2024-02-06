@@ -1,0 +1,438 @@
+{
+	"info": {
+		"_postman_id": "2516177a-f5d0-4cba-a053-7a140bd00d58",
+		"name": "agap-music-app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "844034"
+	},
+	"item": [
+		{
+			"name": "songs",
+			"item": [
+				{
+					"name": "Create Song",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Dirty Deeds Done Dirt Cheap(Live)\",\n    \"year\": 1992,\n    \"artist\": \"AC/DC\",\n    \"shortname\": \"dirtydeeds_live\",\n    \"genre\": \"Classic Rock\",\n    \"album\": \"Live\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8081/api/v1/songs"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Songs",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Dirty Deeds Done Dirt Cheap(Live)\",\n    \"year\": 1992,\n    \"artist\": \"AC/DC\",\n    \"shortname\": \"dirtydeeds_live\",\n    \"genre\": \"Classic Rock\",\n    \"album\": \"Live\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8081/api/v1/songs"
+					},
+					"response": []
+				},
+				{
+					"name": "Get a song",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Dirty Deeds Done Dirt Cheap(Live)\",\n    \"year\": 1994,\n    \"artist\": \"AC/DC\",\n    \"shortname\": \"dirtydeeds_live\",\n    \"genre\": \"Classic Rock\",\n    \"album\": \"Live\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8081/api/v1/songs/3"
+					},
+					"response": []
+				},
+				{
+					"name": "Update a song",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Dirty Deeds Done Dirt Cheap(Live)\",\n    \"year\": 1994,\n    \"artist\": \"AC/DC\",\n    \"shortname\": \"dirtydeeds_live\",\n    \"genre\": \"Classic Rock\",\n    \"album\": \"Live\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8081/api/v1/songs/3"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a song",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Dirty Deeds Done Dirt Cheap(Live)\",\n    \"year\": 1994,\n    \"artist\": \"AC/DC\",\n    \"shortname\": \"dirtydeeds_live\",\n    \"genre\": \"Classic Rock\",\n    \"album\": \"Live\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8081/api/v1/songs/3"
+					},
+					"response": []
+				},
+				{
+					"name": "Create song 2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Shape of you\",\n    \"year\": 2017,\n    \"artist\": \"Ed Sheeran\",\n    \"shortname\": \"Deluxe\",\n    \"genre\": \"Pop dancehall tropical house\",\n    \"album\": \"Divide\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8081/api/v1/songs"
+					},
+					"response": []
+				},
+				{
+					"name": "query songs by filterOr and filterAnd",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Shape of you\",\n    \"year\": 2017,\n    \"artist\": \"Ed Sheeran\",\n    \"shortname\": \"Deluxe\",\n    \"genre\": \"Pop dancehall tropical house\",\n    \"album\": \"Divide\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/api/v1/query-songs?filterOr=artist%7Ceq%7CEd+Sheeran%26genre%7Ceq%7CClassic+Rock",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"query-songs"
+							],
+							"query": [
+								{
+									"key": "filterOr",
+									"value": "artist%7Ceq%7CEd+Sheeran&genre%7Ceq%7CClassic+Rock"
+								},
+								{
+									"key": "filterAnd",
+									"value": "artist%7Ceq%7CEd+Sheeran&genre%7Ceq%7CClassic+Rock",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "query songs pageable by size and page and orders and filterOr and filterAnd",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Shape of you\",\n    \"year\": 2017,\n    \"artist\": \"Ed Sheeran\",\n    \"shortname\": \"Deluxe\",\n    \"genre\": \"Pop dancehall tropical house\",\n    \"album\": \"Divide\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/api/v1/query-songs-pageable?filterOr=artist%7Ceq%7CEd+Sheeran%26genre%7Ceq%7CClassic+Rock&size=1&page=0&orders=year%7CASC",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"query-songs-pageable"
+							],
+							"query": [
+								{
+									"key": "filterAnd",
+									"value": "artist%7Ceq%7CEd+Sheeran&genre%7Ceq%7CClassic+Rock",
+									"disabled": true
+								},
+								{
+									"key": "filterOr",
+									"value": "artist%7Ceq%7CEd+Sheeran%26genre%7Ceq%7CClassic+Rock"
+								},
+								{
+									"key": "size",
+									"value": "1"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "orders",
+									"value": "year%7CASC"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "bands",
+			"item": [
+				{
+					"name": "Get all bands",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"AC/DC\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8081/api/v1/bands"
+					},
+					"response": []
+				},
+				{
+					"name": "Get band by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"AC/DC\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8081/api/v1/bands/5"
+					},
+					"response": []
+				},
+				{
+					"name": "Update band by id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 5,\n    \"name\": \"Ed Sheeran\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8081/api/v1/bands/5"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete band by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 5,\n    \"name\": \"Ed Sheeran\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8081/api/v1/bands/5"
+					},
+					"response": []
+				},
+				{
+					"name": "Create band or artist",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Ed Sheeran\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8081/api/v1/bands"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "query songs pageable by size and page and orders and filterOr and filterAnd",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Shape of you\",\n    \"year\": 2017,\n    \"artist\": \"Ed Sheeran\",\n    \"shortname\": \"Deluxe\",\n    \"genre\": \"Pop dancehall tropical house\",\n    \"album\": \"Divide\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/api/v1/query-songs-pageable?filterAnd=genre%7Ceq%7CClassic+Rock&size=1&page=0&orders=year%7CASC",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"query-songs-pageable"
+					],
+					"query": [
+						{
+							"key": "filterAnd",
+							"value": "genre%7Ceq%7CClassic+Rock"
+						},
+						{
+							"key": "filterOr",
+							"value": "artist%7Ceq%7CEd+Sheeran%26genre%7Ceq%7CClassic+Rock",
+							"disabled": true
+						},
+						{
+							"key": "size",
+							"value": "1"
+						},
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "orders",
+							"value": "year%7CASC"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all songs before 2002",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Shape of you\",\n    \"year\": 2017,\n    \"artist\": \"Ed Sheeran\",\n    \"shortname\": \"Deluxe\",\n    \"genre\": \"Pop dancehall tropical house\",\n    \"album\": \"Divide\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/api/v1/query-songs-pageable?filterOr=year%7Clt%7C2002&size=10&page=0&orders=year%7CDESC",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"query-songs-pageable"
+					],
+					"query": [
+						{
+							"key": "filterAnd",
+							"value": "year%7cgt%7c2002",
+							"disabled": true
+						},
+						{
+							"key": "filterOr",
+							"value": "year%7Clt%7C2002"
+						},
+						{
+							"key": "size",
+							"value": "10"
+						},
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "orders",
+							"value": "year%7CDESC"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
