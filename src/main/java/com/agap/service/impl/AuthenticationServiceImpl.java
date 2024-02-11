@@ -23,6 +23,9 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 
     @Override
     public JwtAuthenticationResponse signup(SignUpRequest request) {
+        if (userRepository.findByEmail(request.getEmail()).isPresent()) {
+            throw new IllegalArgumentException("User with email "+request.getEmail()+" already exists.");
+        }
         Long id = sequenceGeneratorService.generateSequence(User.SEQUENCE_NAME);
         var user = User.builder().id(id).firstName(request.getFirstName()).lastName(request.getLastName())
                 .email(request.getEmail()).password(passwordEncoder.encode(request.getPassword()))
